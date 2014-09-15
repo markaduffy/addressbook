@@ -1,0 +1,13 @@
+.top-nav {
+  margin-bottom:30px;
+}
+
+#contact-form label.error {
+	margin:6px;
+	color: #f00;
+}
+
+span.required {
+	font-size: 18pt;
+	color: #f00;
+}

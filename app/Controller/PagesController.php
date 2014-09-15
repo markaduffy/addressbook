@@ -30,6 +30,8 @@ App::uses('AppController', 'Controller');
  */
 class PagesController extends AppController {
 
+	public $components = array('Cookie');
+
 /**
  * This controller does not use a model
  *
@@ -48,22 +50,13 @@ class PagesController extends AppController {
 	public function display() {
 		$path = func_get_args();
 
-		$count = count($path);
-		if (!$count) {
-			return $this->redirect('/');
-		}
-		$page = $subpage = $title_for_layout = null;
+		$title_for_layout = "Address Book";
 
-		if (!empty($path[0])) {
-			$page = $path[0];
+		$this->set(compact('title_for_layout'));
+
+		if ($this->Cookie->read('address_book_user_id')){
+			return $this->redirect(array('controller' => 'contacts', 'action' => 'index'));
 		}
-		if (!empty($path[1])) {
-			$subpage = $path[1];
-		}
-		if (!empty($path[$count - 1])) {
-			$title_for_layout = Inflector::humanize($path[$count - 1]);
-		}
-		$this->set(compact('page', 'subpage', 'title_for_layout'));
 
 		try {
 			$this->render(implode('/', $path));
