@@ -1,3 +1,16 @@
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    $("#contact-form").validate();
+
+    $("#first-name").rules("add", {required:true});
+    $("#last-name").rules("add", {required:true});
+
+
+});
+
+</script>
 <div class="row">
 	<div class="col-md-4">
 		<p>Welcome to your Address Book. Enter your name to create a new address book.</p>

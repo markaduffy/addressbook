@@ -1,3 +1,18 @@
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    $("#contact-form").validate();
+
+    $("#full-name").rules("add", {required:true});
+    $("#address1").rules("add", {required:true});
+    $("#city").rules("add", {required:true});
+    $("#state").rules("add", {required:true});
+
+
+});
+
+</script>
 <div class="row top-nav">
 	<div class="col-md-12">
 		<ul class="nav nav-tabs" role="tablist">

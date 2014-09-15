@@ -18,8 +18,7 @@
 			'jquery-1.11.1.min',
 			'jquery.validate',
 			'bootstrap.min',
-			'http://maps.google.com/maps/api/js?sensor=false',
-			'init'
+			'http://maps.google.com/maps/api/js?sensor=false'
 		));
 
 		echo $this->fetch('meta');
